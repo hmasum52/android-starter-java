@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="16dp"
+    >
+
+    <LinearLayout
+        android:layout_weight="8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/baby_shower"
+            />
+
+        <TextView
+            style="@style/TextAppearance.Material3.DisplayLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hi there!"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tell us about yourself"
+            style="@style/MaterialAlertDialog.Material3.Title.Text"
+            android:textColor="@android:color/darker_gray"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your name"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/next_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        app:cornerRadius="5dp"
+        />
+
+</LinearLayout>
