@@ -8,6 +8,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.NavGraph;
+import androidx.navigation.NavInflater;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.navigationcomponentsdemo.databinding.FragmentHomeBinding;
 
