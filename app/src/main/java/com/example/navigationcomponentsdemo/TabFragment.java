@@ -15,6 +15,8 @@ public class TabFragment extends Fragment {
     private final String tabName;
     FragmentTabBinding binding;
 
+    public TabFragment(){ tabName="Default";}
+
     public TabFragment(String tabName){
         this.tabName = tabName;
     }

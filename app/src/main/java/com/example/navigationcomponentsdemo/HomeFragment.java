@@ -1,6 +1,7 @@
 package com.example.navigationcomponentsdemo;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
-
+    public static final String TAG = "HomeFragment";
     String name;
 
     FragmentHomeBinding binding;
@@ -32,6 +33,7 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             name = getArguments().getString("name");
+            Log.d(TAG, "onCreate-> username: "+name);
         }
     }
 
@@ -59,12 +61,7 @@ public class HomeFragment extends Fragment {
         TabFragmentAdapter adapter = new TabFragmentAdapter(this, fragments);
         binding.pager.setAdapter(adapter);
 
-        new TabLayoutMediator(binding.tabLayout, binding.pager, new TabLayoutMediator.TabConfigurationStrategy() {
-            @Override
-            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-                tab.setText(tabNameList.get(position));
-            }
-        }).attach();
+        new TabLayoutMediator(binding.tabLayout, binding.pager, (tab, position) -> tab.setText(tabNameList.get(position))).attach();
 
 
         binding.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
