@@ -1,4 +1,4 @@
-package com.example.navigationcomponentsdemo;
+package github.hmasum52.androidstarterjava;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.navigationcomponentsdemo.databinding.FragmentTabBinding;
+import github.hmasum52.androidstarterjava.databinding.FragmentTabBinding;
 
 public class TabFragment extends Fragment {
     private final String tabName;

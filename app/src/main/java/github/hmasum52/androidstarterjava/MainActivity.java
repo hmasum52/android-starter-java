@@ -1,4 +1,4 @@
-package com.example.navigationcomponentsdemo;
+package github.hmasum52.androidstarterjava;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,7 +11,7 @@ import androidx.navigation.ui.NavigationUI;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.navigationcomponentsdemo.databinding.ActivityMainBinding;
+import github.hmasum52.androidstarterjava.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.navigationcomponentsdemo;
+package github.hmasum52.androidstarterjava;
 
 import org.junit.Test;
 

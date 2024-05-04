@@ -1,4 +1,4 @@
-package com.example.navigationcomponentsdemo;
+package github.hmasum52.androidstarterjava;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -9,12 +9,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.NavGraph;
-import androidx.navigation.NavInflater;
-import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.navigationcomponentsdemo.databinding.FragmentHomeBinding;
+import github.hmasum52.androidstarterjava.databinding.FragmentHomeBinding;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;

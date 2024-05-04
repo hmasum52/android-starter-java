@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "NavigationComponentsDemo"
+rootProject.name = "AndroidStarterJava"
 include ':app'
