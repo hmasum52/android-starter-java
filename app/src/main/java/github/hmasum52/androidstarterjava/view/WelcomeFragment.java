@@ -1,4 +1,4 @@
-package github.hmasum52.androidstarterjava;
+package github.hmasum52.androidstarterjava.view;
 
 import android.os.Bundle;
 
@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import github.hmasum52.androidstarterjava.R;
 import github.hmasum52.androidstarterjava.databinding.FragmentWelcomeBinding;
 
 

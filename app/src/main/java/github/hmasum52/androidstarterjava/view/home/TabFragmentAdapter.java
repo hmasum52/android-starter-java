@@ -1,4 +1,4 @@
-package github.hmasum52.androidstarterjava;
+package github.hmasum52.androidstarterjava.view.home;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
