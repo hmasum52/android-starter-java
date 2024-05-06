@@ -1,6 +1,7 @@
 ### Building singed apk with github actions
 
 #### Step 1: Add secrets to your repository
+
 - Go to your repository
 - Click on `Settings`
 - Click on `Secrets`
@@ -21,7 +22,7 @@ base64 local.properties -w 0
     signingConfigs {
 
         release {
-            storeFile file("keystore.jks")
+            storeFile file("../keystore.jks")
             storePassword System.getenv("SIGNING_STORE_PASSWORD")
             keyAlias System.getenv("SIGNING_KEY_ALIAS")
             keyPassword System.getenv("SIGNING_KEY_PASSWORD")
@@ -31,4 +32,14 @@ base64 local.properties -w 0
             v2SigningEnabled true
         }
     }
+    
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release // for github action
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
 ```
+
+Reference: https://medium.com/@dcostalloyd90/automating-android-builds-with-github-actions-a-step-by-step-guide-2a02a54f59cd

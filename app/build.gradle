@@ -20,7 +20,6 @@ android {
     // https://developer.android.com/studio/publish/app-signing#secure-shared-keystore
     // for building with github actions
     signingConfigs {
-
         release {
             storeFile file("../keystore.jks")
             storePassword System.getenv("SIGNING_STORE_PASSWORD")
@@ -35,6 +34,7 @@ android {
 
     buildTypes {
         release {
+            signingConfig signingConfigs.release // for github action
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
