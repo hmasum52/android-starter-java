@@ -46,12 +46,11 @@ jobs:
       - name: Decode Keystore
         env:
           ENCODED_STRING: ${{ secrets.SIGNING_KEY_STORE_BASE64 }}
-          SIGNING_KEY_STORE_PATH: "app/keystore.jks"
+          SIGNING_KEY_STORE_PATH: "keystore.jks"
         run: |
           echo $ENCODED_STRING > keystore-b64.txt
           base64 -d keystore-b64.txt > $SIGNING_KEY_STORE_PATH
           rm keystore-b64.txt
-          echo $SIGNING_KEY_STORE_PATH 
 
       - name: ls dir
         run: ls
@@ -59,7 +58,7 @@ jobs:
       #2
       - name: Build Release apk
         env:
-          SIGNING_KEY_STORE_PATH: "app/keystore.jks"
+          SIGNING_KEY_STORE_PATH: "keystore.jks"
           SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
           SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
@@ -68,7 +67,7 @@ jobs:
         #3
       - name: Build Release bundle
         env:
-          SIGNING_KEY_STORE_PATH: "app/keystore.jks"
+          SIGNING_KEY_STORE_PATH: "keystore.jks"
           SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
           SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
