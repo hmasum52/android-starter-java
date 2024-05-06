@@ -17,7 +17,6 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: 17
-
       - name: copy the local properties file
         run: echo ${{ secrets.LOCAL_PROPERTIES }} | base64 --decode > local.properties
 
