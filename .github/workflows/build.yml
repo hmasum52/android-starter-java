@@ -20,10 +20,6 @@ jobs:
       - name: echo local properties
         run: echo ${{ secrets.LOCAL_PROPERTIES }}
 
-      - name: copy the local properties file
-        run: echo ${{ secrets.LOCAL_PROPERTIES }} | base64 --decode > local.properties
-
-
       - name: copy google service json to the appropriate path
         run: |
           # check if secrets.GOOGLE_SERVICES_JSON exists first then echo
