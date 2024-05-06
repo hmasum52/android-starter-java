@@ -50,6 +50,7 @@ jobs:
         run: |
           echo $ENCODED_STRING > keystore-b64.txt
           base64 -d keystore-b64.txt > $SIGNING_KEY_STORE_PATH
+          rm keystore-b64.txt
 
       - name: ls dir
         run: ls
@@ -57,7 +58,7 @@ jobs:
       #2
       - name: Build Release apk
         env:
-          SIGNING_KEY_STORE_PATH: "keystore.jks"
+          SIGNING_KEY_STORE_PATH: "./keystore.jks"
           SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
           SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
