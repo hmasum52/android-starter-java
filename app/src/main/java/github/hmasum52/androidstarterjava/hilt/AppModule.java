@@ -1,15 +1,19 @@
 package github.hmasum52.androidstarterjava.hilt;
 
+import androidx.fragment.app.FragmentActivity;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
 import dagger.hilt.EntryPoint;
 import dagger.hilt.InstallIn;
+import dagger.hilt.android.scopes.ActivityScoped;
 import dagger.hilt.components.SingletonComponent;
 import github.hmasum52.androidstarterjava.BuildConfig;
 import github.hmasum52.androidstarterjava.api.ApiEndPoints;
 import github.hmasum52.androidstarterjava.api.FakeStoreEndpoints;
+import github.hmasum52.androidstarterjava.util.GPS;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import okhttp3.OkHttpClient;

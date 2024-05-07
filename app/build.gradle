@@ -100,4 +100,6 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.32'
     annotationProcessor 'org.projectlombok:lombok:1.18.32'
 
+    // fused location
+    implementation 'com.google.android.gms:play-services-location:21.2.0'
 }

@@ -8,6 +8,11 @@
             android:icon="@drawable/baseline_home_24"
             />
         <item
+            android:id="@+id/mapFragment"
+            android:title="Map"
+            android:icon="@drawable/baseline_location_on_24"
+            />
+        <item
             android:id="@+id/searchFragment"
             android:title="Search"
             android:icon="@drawable/baseline_search_24"

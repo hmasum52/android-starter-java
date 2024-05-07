@@ -17,6 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 import github.hmasum52.androidstarterjava.R;
 import github.hmasum52.androidstarterjava.api.FakeStoreApi;
 import github.hmasum52.androidstarterjava.databinding.ActivityMainBinding;
+import github.hmasum52.androidstarterjava.util.GPS;
 
 @AndroidEntryPoint
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
 
     int currentFragment;
+
+    @Inject
+    GPS gps; // this is a must call to avoid exception
 
     @Inject
     FakeStoreApi api;

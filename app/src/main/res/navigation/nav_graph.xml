@@ -34,4 +34,8 @@
         android:name="github.hmasum52.androidstarterjava.view.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="github.hmasum52.androidstarterjava.view.MapFragment"
+        android:label="MapFragment" />
 </navigation>
