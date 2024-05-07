@@ -102,4 +102,8 @@ dependencies {
 
     // fused location
     implementation 'com.google.android.gms:play-services-location:21.2.0'
+
+    // https://developers.google.com/maps/documentation/android-sdk/start
+    implementation 'com.google.android.gms:play-services-maps:18.2.0'
+
 }
