@@ -11,14 +11,22 @@ import androidx.navigation.ui.NavigationUI;
 import android.os.Bundle;
 import android.view.View;
 
+import javax.inject.Inject;
+
+import dagger.hilt.android.AndroidEntryPoint;
 import github.hmasum52.androidstarterjava.R;
+import github.hmasum52.androidstarterjava.api.FakeStoreApi;
 import github.hmasum52.androidstarterjava.databinding.ActivityMainBinding;
 
+@AndroidEntryPoint
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
 
     int currentFragment;
+
+    @Inject
+    FakeStoreApi api;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        api.getProducts();
     }
 
     @Override
