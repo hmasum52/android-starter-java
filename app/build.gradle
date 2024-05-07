@@ -1,8 +1,11 @@
 plugins {
     id 'com.android.application'
 
+    // dependency injection
+    id 'com.google.dagger.hilt.android'
+
     //to read key from local.properties
-    id 'com.google.secrets_gradle_plugin' version '0.5'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -49,6 +52,8 @@ android {
 
     buildFeatures {
         viewBinding true
+        // https://medium.com/androiddevelopers/5-ways-to-prepare-your-app-build-for-android-studio-flamingo-release-da34616bb946
+        buildConfig true // for reading secrets from local.properties
     }
 }
 
@@ -86,6 +91,8 @@ dependencies {
 
     // retrofit2
     implementation 'com.squareup.retrofit2:retrofit:2.11.0'
+    implementation "com.squareup.retrofit2:converter-gson:2.11.0"
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1' //for logging http request by retrofit
 
     // lottie animation
     implementation 'com.airbnb.android:lottie:6.1.0'
