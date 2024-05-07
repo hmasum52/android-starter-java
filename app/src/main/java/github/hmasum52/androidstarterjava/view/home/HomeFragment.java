@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import dagger.hilt.android.AndroidEntryPoint;
+import github.hmasum52.androidstarterjava.api.FakeStoreApi;
 import github.hmasum52.androidstarterjava.databinding.FragmentHomeBinding;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
@@ -18,6 +20,9 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
+@AndroidEntryPoint
 public class HomeFragment extends Fragment {
     public static final String TAG = "HomeFragment";
     String name;
@@ -45,19 +50,22 @@ public class HomeFragment extends Fragment {
         String msg= "Hello "+name;
         binding.greetingEdt.setText(msg);
 
-        List<String> tabNameList = new ArrayList<>();
+
         List<Fragment> fragments = new ArrayList<>();
 
-        for (int i = 0; i < 8; i++) {
-            String tabName = "Tab-"+i;
-            tabNameList.add(tabName);
-            fragments.add(new TabFragment(tabName));
+        for(String category: FakeStoreApi.categories){
+            TabFragment tabFragment = new TabFragment();
+            // set args
+            Bundle b = new Bundle();
+            b.putString("tabName", category);
+            tabFragment.setArguments(b);
+            fragments.add(tabFragment);
         }
 
         TabFragmentAdapter adapter = new TabFragmentAdapter(this, fragments);
         binding.pager.setAdapter(adapter);
 
-        new TabLayoutMediator(binding.tabLayout, binding.pager, (tab, position) -> tab.setText(tabNameList.get(position))).attach();
+        new TabLayoutMediator(binding.tabLayout, binding.pager, (tab, position) -> tab.setText(FakeStoreApi.categories.get(position))).attach();
 
 
         binding.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

@@ -52,8 +52,6 @@ public class MainActivity extends AppCompatActivity {
                 currentFragment = navDestination.getId();
             }
         });
-
-        api.getProducts();
     }
 
     @Override
