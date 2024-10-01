@@ -37,7 +37,8 @@ public class AppModule {
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BuildConfig.FAKESTORE_API_ENDPOINT)
+                //.baseUrl(BuildConfig.FAKESTORE_API_ENDPOINT)
+                .baseUrl("https://fakestoreapi.com/")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
